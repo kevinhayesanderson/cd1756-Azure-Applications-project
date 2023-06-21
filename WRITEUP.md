@@ -1,12 +1,9 @@
 # Write-up Template
 
-### Analyze, choose, and justify the appropriate resource option for deploying the app.
+### Analyze, choose, and justify the appropriate resource option for deploying the app
 
-*For **both** a VM or App Service solution for the CMS app:*
-- *Analyze costs, scalability, availability, and workflow*
-- *Choose the appropriate solution (VM or App Service) for deploying the app*
-- *Justify your choice*
+I am going with App Service, as it is Cost-effective, no need for much scalability as it has less users. Workflow - the app is quite simple and doesn't require complex workflows so app service is more enough.
 
-### Assess app changes that would change your decision.
+### Assess app changes that would change your decision
 
-*Detail how the app and any other needs would have to change for you to change your decision in the last section.* 
+If we require to open this to multiple groups of users at a wider scale , also add more functionalities that would require maybe role level permissions , then a VM would be more applicable as it would give us the flexibility to customize and the cost would be justified.
