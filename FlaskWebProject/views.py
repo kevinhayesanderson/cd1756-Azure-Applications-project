@@ -68,6 +68,7 @@ def login():
             flash("Invalid username or password")
             return redirect(url_for("login"))
         login_user(user, remember=form.remember_me.data)
+        app.logger.info("User %s successfully logged in.", user.username)
         next_page = request.args.get("next")
         if not next_page or url_parse(next_page).netloc != "":
             next_page = url_for("home")
@@ -98,6 +99,7 @@ def authorized():
         # Note: In a real app, we'd use the 'name' property from session["user"] below
         # Here, we'll use the admin username for anyone who is authenticated by MS
         user = User.query.filter_by(username="admin").first()
+        app.logger.info(f"User {user.username} has successfully logged in")
         login_user(user)
         _save_cache(cache)
     return redirect(url_for("home"))
@@ -105,6 +107,7 @@ def authorized():
 
 @app.route("/logout")
 def logout():
+    username = current_user.username
     logout_user()
     if session.get("user"):  # Used MS Login
         # Wipe out user and its token cache from session
@@ -116,6 +119,7 @@ def logout():
             + "?post_logout_redirect_uri="
             + url_for("login", _external=True)
         )
+    app.logger.info(f"User {username} has successfully logged out")
     return redirect(url_for("login"))
 
 
