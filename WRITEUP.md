@@ -3,8 +3,10 @@
 ### Analyze, choose, and justify the appropriate resource option for deploying the app
 
 I have chosen App Service for this app deployment for the following reasons,
-1.Vms can be expensive as they require maintenance costs
-2.App service provides automatic horizontal scaling and easy configuration for vertical scaling.
+1.VMs can be more expensive as they require more infrastructure and maintenance costs.
+App Service is more cost-effective as it provides a managed platform with no additional infrastructure or maintenance costs.
+2.VMs can be scaled vertically or horizontally, but require manual setup and configuration.
+App Service provides automatic horizontal scaling and easy configuration for vertical scaling.
 3.App Service provides high availability with automatic fail-over and build-in redundancy.
 4.App Service provides a streamlined deployment process with easy integration with source control and continuous deployment tools.
 
